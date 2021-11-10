@@ -1,0 +1,18 @@
+{
+  "name" : "Long straight",
+  "type_name" : "hair",
+  "layer_1" : {
+    "zPos" : 25,
+    "female" : "hair/long_straight/",
+    "male" : "hair/long_straight/"
+  },
+  "layer_2" : {
+    "zPos" : 5,
+    "female" : "hair/long_straight/behind/",
+    "male" : "hair/long_straight/behind/"
+  },
+  "variants": [
+    "ash brown",
+    "black"
+  ]
+}

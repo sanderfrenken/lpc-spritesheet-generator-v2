@@ -1,0 +1,13 @@
+{
+  "name" : "Longsleeve",
+  "type_name" : "shirt",
+  "layer_1" : {
+    "zPos" : 15,
+    "male" : "torso/shirt/longsleeve/male/",
+    "female" : "torso/shirt/longsleeve/female/"
+  },
+  "variants": [
+    "amber",
+    "amethyst"
+  ]
+}

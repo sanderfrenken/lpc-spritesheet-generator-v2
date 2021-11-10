@@ -1,0 +1,16 @@
+{
+  "name" : "Thin",
+  "type_name" : "body",
+  "layer_1" : {
+    "zPos" : 10,
+    "male" : "body/male/thin/",
+    "female" : "body/female/thin/"
+  },
+  "variants": [
+    "brown",
+    "coffee",
+    "ivory",
+    "peach",
+    "tan"
+  ]
+}

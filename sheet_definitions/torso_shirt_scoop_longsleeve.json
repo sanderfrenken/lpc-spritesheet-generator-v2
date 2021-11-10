@@ -1,0 +1,13 @@
+{
+  "name" : "Scoop Longsleeve",
+  "type_name" : "shirt",
+  "layer_1" : {
+    "zPos" : 15,
+    "male" : "torso/shirt/scoop_longsleeve/male/",
+    "female" : "torso/shirt/scoop_longsleeve/female/"
+  },
+  "variants": [
+    "amber",
+    "amethyst"
+  ]
+}

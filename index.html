@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="fav.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<title>LPC Sprite Sheet Generator V2</title>
+	<link rel="stylesheet" type="text/css" href="chargen.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.string/2.3.3/underscore.string.min.js"></script>
+	<script type="text/javascript" src="jhash-2.1.min.js"></script>
+	<script type="text/javascript" src="sources/chargen_utils.js"></script>
+	<script type="text/javascript" src="sources/chargen_templates.js"></script>
+	<script type="text/javascript" src="sources/chargen.js"></script>
+</head>
+<body>
+	<form id="customizeChar">
+		<div id="controls">
+			<h1>LPC Sprite Sheet Generator V2</h1>
+			<p>Free/Libre pixel art sprites from the <a href="lpc.opengameart.org">Liberated Pixel Cup</a> and <a href="https://opengameart.org/content/lpc-collection">OpenGameArt.org</a>. License: <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA 3.0</a>. You must <a id="scroll-to-credits" href="#">credit the authors of this artwork.</a></p>
+			<div>
+				<a id="saveAsPNG"><input type="button" value="Download As PNG"></a>
+				<button type="button" class="generateSheetCredits">Download credits</button>
+			</div>
+			<div>
+				<button type="button" id="collapse">Collapse All</button>
+				<button type="button" id="expand">Expand Selected</button>
+				<button type="button" id="resetAll">Reset all</button>
+				<button type="button" class="replacePinkMask">Replace Mask (pink)</button>
+				<label for="displayMode-compact"><input type="checkbox" name="displayMode" value="compact" id="displayMode-compact"> Compact Display</label>
+			</div>
+			<div>
+				<input type="search" id="searchbox" name="" placeholder="Search" />
+			</div>
+		</div>
+		<section id="chooser">
+			<ul>
+				<li>
+					<!-- Body types -->
+					<span class="expanded">Body type</span>
+					<ul style="display:block;">
+						<li class="noPreview">
+							<input type="radio" id="sex-male" name="sex" checked>
+							<label for="sex-male">Male</label>
+						</li>
+						<li class="noPreview">
+							<input type="radio" id="sex-female" name="sex">
+							<label for="sex-female">Female</label>
+						</li>
+					</ul>
+				</li>
+
+				<!-- Bodies -->
+				<li>
+					<span class="condensed">Body</span>
+					<ul>
+						<div id="sheet_body_human"></div>
+					</ul>
+				</li>
+
+				<!-- Heads -->
+				<li>
+					<span class="condensed">Head</span>
+					<ul>
+						<div id="sheet_head_human"></div>
+					</ul>
+				</li>
+
+				<!-- Legs -->
+				<li>
+					<span class="condensed">Pants</span>
+					<ul>
+						<div id="sheet_legs_pants"></div>
+					</ul>
+				</li>
+
+				<!-- Feet -->
+				<li>
+					<span class="condensed">Feet</span>
+					<ul>
+						<div id="sheet_feet_shoes"></div>
+					</ul>
+				</li>
+
+				<!-- Torso -->
+				<li>
+					<span class="condensed">Shirt</span>
+					<ul>
+						<div id="sheet_torso_shirt_longsleeve"></div>
+						<div id="sheet_torso_shirt_scoop_longsleeve"></div>
+					</ul>
+				</li>
+
+				<!-- Hair -->
+				<li>
+					<span class="condensed">Hair</span>
+					<ul>
+						<div id="sheet_hair_long_princess"></div>
+						<div id="sheet_hair_long_straight"></div>
+						<div id="sheet_hair_long_tied"></div>
+
+						<div id="sheet_hair_medium_curly"></div>
+						<div id="sheet_hair_medium_idol"></div>
+						<div id="sheet_hair_medium_page"></div>
+
+						<div id="sheet_hair_short_buzzcut"></div>
+						<div id="sheet_hair_short_curly"></div>
+						<div id="sheet_hair_short_parted"></div>
+					</ul>
+				</li>
+
+			</ul>
+		</section>
+	</form>
+	<section id="preview">
+		<div id="previewAnimationsBox">
+			Preview
+			<select id="whichAnim">
+				<option value="spellcast" selected data-row="0" data-num="4" data-cycle="3">Idle</option>
+				<option value="thrust" data-row="4" data-num="4" data-cycle="8">Thrust</option>
+				<option value="walk" data-row="8" data-num="4" data-cycle="9">Walk</option>
+				<option value="slash" data-row="12" data-num="4" data-cycle="6">Slash</option>
+				<option value="shoot" data-row="16" data-num="4" data-cycle="13">Shoot</option>
+				<option value="hurt" data-row="20" data-num="1" data-cycle="6">Hurt</option>
+				<option value="smash" data-row="12" data-num="4" data-cycle="4">Smash</option>
+			</select>
+			<canvas id="previewAnimations" width="1024" height="192"></canvas>
+		</div>
+
+		<div class="instr">Complete sprite sheet (click to zoom): </div>
+		<canvas id="spritesheet" width="832" height="1344">HTML5 Browser required.</canvas>
+	</section>
+	<div id="credits">
+		<h2>Credits</h2>
+		<p>This art is available under the <a href="http://www.gnu.org/licenses/gpl-3.0.html">GNU GPL 3.0</a> and/or <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA 3.0</a> licenses. You must credit the authors. <a href="https://github.com/sanderfrenken/Universal-LPC-Spritesheet-Character-Generator/blob/master/README.md">Detailed attribution instructions</a>. </p>
+		<p><strong>Download: </strong>
+			<button type="button" class="generateSheetCredits">Credits for this sheet</button>
+			<button type="button" class="generateAllCredits">Credits for all sprites</button>
+		</p>
+		<p>Authors of this spritesheet:</p>
+		<textarea id="creditsText" rows="20" cols="300" readonly>Credits</textarea>
+	</div>
+	<div id="advanced">
+		<h2>Advanced Tools</h2>
+		<p>
+			<strong>Custom file: </strong><span>Draw local file with custom z-position:</span>
+			<input type="file" id="previewFile">
+			<label for="ZPOS">Z-position:</label><input id="ZPOS" type="text" name="ZPOS">
+		</p>
+		<p>
+			<strong>Custom animation: </strong><span>Define custom sequence of frames for the selected animation. First frame is 0, e.g.: '3, 5, 3, 0'.</span>
+			<input id="customFrames" type="text" name="customFrames">custom frames<br>
+		</p>
+	</div>
+</body>
+</html>

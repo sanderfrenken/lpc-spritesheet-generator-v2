@@ -1,0 +1,13 @@
+{
+  "name" : "Medium idol",
+  "type_name" : "hair",
+  "layer_1" : {
+    "zPos" : 25,
+    "female" : "hair/medium_idol/",
+    "male" : "hair/medium_idol/"
+  },
+  "variants": [
+    "ash brown",
+    "black"
+  ]
+}

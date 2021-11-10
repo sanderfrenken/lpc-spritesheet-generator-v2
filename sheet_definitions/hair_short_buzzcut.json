@@ -1,0 +1,13 @@
+{
+  "name" : "Short buzzcut",
+  "type_name" : "hair",
+  "layer_1" : {
+    "zPos" : 25,
+    "female" : "hair/short_buzzcut/",
+    "male" : "hair/short_buzzcut/"
+  },
+  "variants": [
+    "ash brown",
+    "black"
+  ]
+}
