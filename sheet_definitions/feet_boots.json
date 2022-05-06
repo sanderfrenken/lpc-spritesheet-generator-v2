@@ -1,0 +1,13 @@
+{
+  "name" : "Boots",
+  "type_name" : "shoes",
+  "layer_1" : {
+    "zPos" : 16,
+    "male" : "feet/boots/male/",
+    "female" : "feet/boots/female/"
+  },
+  "variants": [
+    "amber",
+    "amethyst"
+  ]
+}

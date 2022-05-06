@@ -63,7 +63,8 @@
 				<li>
 					<span class="condensed">Head</span>
 					<ul>
-						<div id="sheet_head_human"></div>
+						<div id="sheet_head_masculine"></div>
+						<div id="sheet_head_feminine"></div>
 					</ul>
 				</li>
 
@@ -80,6 +81,9 @@
 					<span class="condensed">Feet</span>
 					<ul>
 						<div id="sheet_feet_shoes"></div>
+						<div id="sheet_feet_boots"></div>
+						<div id="sheet_feet_high_socks"></div>
+						<div id="sheet_feet_ankle_socks"></div>
 					</ul>
 				</li>
 
@@ -117,13 +121,12 @@
 		<div id="previewAnimationsBox">
 			Preview
 			<select id="whichAnim">
-				<option value="spellcast" selected data-row="0" data-num="4" data-cycle="3">Idle</option>
-				<option value="thrust" data-row="4" data-num="4" data-cycle="8">Thrust</option>
-				<option value="walk" data-row="8" data-num="4" data-cycle="9">Walk</option>
-				<option value="slash" data-row="12" data-num="4" data-cycle="6">Slash</option>
-				<option value="shoot" data-row="16" data-num="4" data-cycle="13">Shoot</option>
-				<option value="hurt" data-row="20" data-num="1" data-cycle="6">Hurt</option>
-				<option value="smash" data-row="12" data-num="4" data-cycle="4">Smash</option>
+				<option value="idle" selected data-row="0" data-num="4" data-cycle="3">Idle</option>
+				<option value="walk" data-row="4" data-num="4" data-cycle="8">Walk</option>
+				<option value="run" data-row="8" data-num="4" data-cycle="8">Run</option>
+				<option value="jump" data-row="12" data-num="4" data-cycle="6">Jump</option>
+				<option value="emote" data-row="16" data-num="4" data-cycle="3">Emote</option>
+				<option value="climb" data-row="20" data-num="4" data-cycle="4">Climb</option>
 			</select>
 			<canvas id="previewAnimations" width="1024" height="192"></canvas>
 		</div>

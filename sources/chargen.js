@@ -216,7 +216,7 @@ $(document).ready(function() {
     if ($selectedAnim.val() == "smash")  {
       animationItems = [5, 4, 1, 0];
     } else {
-      for (var i = 1; i < animRowFrames; ++i) {
+      for (var i = 0; i < animRowFrames; ++i) {
         animationItems.push(i);
       }
     }
@@ -258,6 +258,7 @@ $(document).ready(function() {
         idToSelect = "body-Muscular_muscular_white_v2";
       }
       $(`#${idToSelect}`).prop("checked", true);
+      setParams();
     }
   }
 
@@ -373,14 +374,14 @@ $(document).ready(function() {
       }
       oversizeIdx+=1;
     }
-
+    const animations = ["idle", "walk", "run", "jump", "emotes", "climb"];
     if (oversize) {
       canvas.width = 1536;
       canvas.height = 1344 + 768;
       $(anim).addClass('oversize')
     } else {
       canvas.width = 832;
-      canvas.height = 1344;
+      canvas.height = animations.length*256;
       $(anim).removeClass('oversize')
     }
     $("#chooser>ul").css("height", canvas.height);
@@ -391,29 +392,57 @@ $(document).ready(function() {
     });
 
     for (item in itemsToDraw) {
-      const fileName = itemsToDraw[itemIdx].fileName;
-      const img = getImage(fileName);
-      const oversize = itemsToDraw[itemIdx].oversize;
-      if (oversize !== undefined) {
-        if (oversize == "thrust") {
-          for (var i = 0; i < 8; ++i)
-          for (var j = 0; j < 4; ++j) {
-            var imgData = ctx.getImageData(64 * i, 256 + 64 * j, 64, 64);
-            ctx.putImageData(imgData, 64 + 192 * i, 1408 + 192 * j);
+      var animationIdx = 0;
+      for (animation in animations) {
+        const fileName = itemsToDraw[itemIdx].fileName;
+        const img = getImage(fileName.replace(".png", "")+"/"+animations[animationIdx]+".png");
+        const oversize = itemsToDraw[itemIdx].oversize;
+        if (oversize !== undefined) {
+          if (oversize == "thrust") {
+            for (var i = 0; i < 8; ++i)
+            for (var j = 0; j < 4; ++j) {
+              var imgData = ctx.getImageData(64 * i, 256 + 64 * j, 64, 64);
+              ctx.putImageData(imgData, 64 + 192 * i, 1408 + 192 * j);
+            }
+          } else if (oversize == "slash") {
+            for (var i = 0; i < 6; ++i)
+            for (var j = 0; j < 4; ++j) {
+              var imgData = ctx.getImageData(64 * i, 768 + 64 * j, 64, 64);
+              ctx.putImageData(imgData, 64 + 192 * i, 1408 + 192 * j);
+            }
           }
-        } else if (oversize == "slash") {
-          for (var i = 0; i < 6; ++i)
-          for (var j = 0; j < 4; ++j) {
-            var imgData = ctx.getImageData(64 * i, 768 + 64 * j, 64, 64);
-            ctx.putImageData(imgData, 64 + 192 * i, 1408 + 192 * j);
-          }
+          ctx.drawImage(img, 256*animationIdx, 1344);
+        } else {
+          drawImage(ctx, img, 256*animationIdx);
         }
-        ctx.drawImage(img, 0, 1344);
-      } else {
-        drawImage(ctx, img);
+        animationIdx+=1;
       }
       itemIdx+=1;
     }
+    // for (item in itemsToDraw) {
+    //   const fileName = itemsToDraw[itemIdx].fileName;
+    //   const img = getImage(fileName);
+    //   const oversize = itemsToDraw[itemIdx].oversize;
+    //   if (oversize !== undefined) {
+    //     if (oversize == "thrust") {
+    //       for (var i = 0; i < 8; ++i)
+    //       for (var j = 0; j < 4; ++j) {
+    //         var imgData = ctx.getImageData(64 * i, 256 + 64 * j, 64, 64);
+    //         ctx.putImageData(imgData, 64 + 192 * i, 1408 + 192 * j);
+    //       }
+    //     } else if (oversize == "slash") {
+    //       for (var i = 0; i < 6; ++i)
+    //       for (var j = 0; j < 4; ++j) {
+    //         var imgData = ctx.getImageData(64 * i, 768 + 64 * j, 64, 64);
+    //         ctx.putImageData(imgData, 64 + 192 * i, 1408 + 192 * j);
+    //       }
+    //     }
+    //     ctx.drawImage(img, 0, 1344);
+    //   } else {
+    //     drawImage(ctx, img);
+    //   }
+    //   itemIdx+=1;
+    // }
   }
 
   function showOrHideElements() {
@@ -509,22 +538,25 @@ $(document).ready(function() {
   }
 
   function getImage2(imgRef, callback) {
+    if (imgRef === undefined) {
+      return
+    }
+    imgRef = imgRef.replace(".png", "");
     if (images[imgRef]) {
       callback(images[imgRef]);
       return images[imgRef];
     } else {
-
       var img = new Image();
-      img.src = "spritesheets/" + imgRef;
+      img.src = "spritesheets/" + imgRef + "/idle.png";
       img.onload = function() { callback(img) };
       images[imgRef] = img;
       return img;
     }
   }
 
-  function drawImage(ctx, img) {
+  function drawImage(ctx, img, yPos) {
     try {
-      ctx.drawImage(img, 0, 0);
+      ctx.drawImage(img, 0, yPos);
       zPosition++;
     } catch(err) {
       console.error("Error: could not find " + img.src);
@@ -566,7 +598,8 @@ $(document).ready(function() {
   function nextFrame() {
     currentAnimationItemIndex = (currentAnimationItemIndex + 1) % animationItems.length;
     var timeDivider = 8;
-    if (currentAnimationItemIndex === 1) {
+    // idle animation
+    if (currentAnimationItemIndex === 1 && animRowStart === 0) {
       timeDivider = 1;
     }
     animCtx.clearRect(0, 0, anim.width, anim.height);

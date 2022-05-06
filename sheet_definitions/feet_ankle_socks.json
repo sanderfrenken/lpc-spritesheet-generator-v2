@@ -1,0 +1,13 @@
+{
+  "name" : "Ankle socks",
+  "type_name" : "shoes",
+  "layer_1" : {
+    "zPos" : 16,
+    "male" : "feet/ankle_socks/male/",
+    "female" : "feet/ankle_socks/female/"
+  },
+  "variants": [
+    "amber",
+    "amethyst"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name" : "Masculine",
+  "type_name" : "head",
+  "layer_1" : {
+    "zPos" : 20,
+    "male" : "head/masculine/",
+    "female" : "head/masculine/"
+  },
+  "variants": [
+    "brown",
+    "coffee",
+    "ivory",
+    "peach",
+    "tan"
+  ]
+}
