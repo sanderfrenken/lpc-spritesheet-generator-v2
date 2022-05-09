@@ -374,7 +374,7 @@ $(document).ready(function() {
       }
       oversizeIdx+=1;
     }
-    const animations = ["idle", "walk", "run", "jump", "emotes", "climb"];
+    const animations = ["idle", "walk", "run", "jump", "emotes", "sitting", "climb"];
     if (oversize) {
       canvas.width = 1536;
       canvas.height = 1344 + 768;
@@ -601,6 +601,8 @@ $(document).ready(function() {
     // idle animation
     if (currentAnimationItemIndex === 1 && animRowStart === 0) {
       timeDivider = 1;
+    } else if (animRowStart === 20) { // sit animation
+      timeDivider = 0.5;
     }
     animCtx.clearRect(0, 0, anim.width, anim.height);
     const currentFrame = animationItems[currentAnimationItemIndex];
