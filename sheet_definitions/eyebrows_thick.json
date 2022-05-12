@@ -1,0 +1,28 @@
+{
+  "name" : "Thick",
+  "type_name" : "eyebrows",
+  "layer_1" : {
+    "zPos" : 20,
+    "male" : "eyebrows/thick/",
+    "female" : "eyebrows/thick/"
+  },
+  "variants": [
+    "ash_brown",
+    "black",
+    "blonde",
+    "blue",
+    "brown",
+    "chestnut",
+    "gray",
+    "green",
+    "orange",
+    "pink",
+    "platinum",
+    "raven",
+    "red",
+    "ruby",
+    "teal",
+    "violet",
+    "white"
+  ]
+}

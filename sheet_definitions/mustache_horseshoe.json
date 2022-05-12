@@ -1,0 +1,28 @@
+{
+  "name" : "Horseshoe",
+  "type_name" : "mustache",
+  "layer_1" : {
+    "zPos" : 20,
+    "male" : "mustache/horseshoe/",
+    "female" : "mustache/horseshoe/"
+  },
+  "variants": [
+    "ash_brown",
+    "black",
+    "blonde",
+    "blue",
+    "brown",
+    "chestnut",
+    "gray",
+    "green",
+    "orange",
+    "pink",
+    "platinum",
+    "raven",
+    "red",
+    "ruby",
+    "teal",
+    "violet",
+    "white"
+  ]
+}
