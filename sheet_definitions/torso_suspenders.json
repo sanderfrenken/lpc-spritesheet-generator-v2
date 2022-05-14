@@ -2,7 +2,7 @@
   "name" : "Suspenders",
   "type_name" : "suspenders",
   "layer_1" : {
-    "zPos" : 27,
+    "zPos" : 61,
     "male" : "torso/suspenders/male/",
     "female" : "torso/suspenders/female/"
   },

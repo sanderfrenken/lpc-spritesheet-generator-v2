@@ -2,7 +2,7 @@
   "name" : "Chevron",
   "type_name" : "mustache",
   "layer_1" : {
-    "zPos" : 20,
+    "zPos" : 82,
     "male" : "mustache/chevron/",
     "female" : "mustache/chevron/"
   },

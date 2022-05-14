@@ -2,7 +2,7 @@
   "name" : "Horseshoe",
   "type_name" : "mustache",
   "layer_1" : {
-    "zPos" : 20,
+    "zPos" : 82,
     "male" : "mustache/horseshoe/",
     "female" : "mustache/horseshoe/"
   },

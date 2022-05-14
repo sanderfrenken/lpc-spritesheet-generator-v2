@@ -2,7 +2,7 @@
   "name" : "Cardigan",
   "type_name" : "sweater",
   "layer_1" : {
-    "zPos" : 26,
+    "zPos" : 60,
     "male" : "torso/sweater_cardigan/male/",
     "female" : "torso/sweater_cardigan/female/"
   },

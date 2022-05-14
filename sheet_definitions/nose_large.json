@@ -2,7 +2,7 @@
   "name" : "Large",
   "type_name" : "nose",
   "layer_1" : {
-    "zPos" : 21,
+    "zPos" : 81,
     "male" : "nose/large/",
     "female" : "nose/large/"
   },

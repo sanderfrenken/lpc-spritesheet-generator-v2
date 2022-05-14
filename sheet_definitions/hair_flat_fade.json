@@ -2,7 +2,7 @@
   "name" : "Flat fade",
   "type_name" : "hair",
   "layer_1" : {
-    "zPos" : 20,
+    "zPos" : 90,
     "male" : "hair/flat_fade/",
     "female" : "hair/flat_fade/"
   },

@@ -2,7 +2,7 @@
   "name" : "Handlebar",
   "type_name" : "mustache",
   "layer_1" : {
-    "zPos" : 20,
+    "zPos" : 82,
     "male" : "mustache/handlebar/",
     "female" : "mustache/handlebar/"
   },

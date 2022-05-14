@@ -2,7 +2,7 @@
   "name" : "Halfmoon",
   "type_name" : "glasses",
   "layer_1" : {
-    "zPos" : 30,
+    "zPos" : 83,
     "male" : "glasses/halfmoon/",
     "female" : "glasses/halfmoon/"
   },

@@ -2,7 +2,7 @@
   "name" : "Feminine",
   "type_name" : "head",
   "layer_1" : {
-    "zPos" : 20,
+    "zPos" : 80,
     "male" : "head/feminine/",
     "female" : "head/feminine/"
   },

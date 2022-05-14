@@ -2,7 +2,7 @@
   "name" : "Medium",
   "type_name" : "beard",
   "layer_1" : {
-    "zPos" : 20,
+    "zPos" : 82,
     "male" : "beard/medium/",
     "female" : "beard/medium/"
   },

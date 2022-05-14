@@ -2,7 +2,7 @@
   "name" : "Cornrows",
   "type_name" : "hair",
   "layer_1" : {
-    "zPos" : 20,
+    "zPos" : 90,
     "male" : "hair/cornrows/",
     "female" : "hair/cornrows/"
   },

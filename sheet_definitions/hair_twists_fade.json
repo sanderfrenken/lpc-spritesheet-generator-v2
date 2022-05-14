@@ -2,7 +2,7 @@
   "name" : "Twists fade",
   "type_name" : "hair",
   "layer_1" : {
-    "zPos" : 20,
+    "zPos" : 90,
     "male" : "hair/twists_fade/",
     "female" : "hair/twists_fade/"
   },

@@ -2,7 +2,7 @@
   "name" : "Ankle socks",
   "type_name" : "shoes",
   "layer_1" : {
-    "zPos" : 16,
+    "zPos" : 20,
     "male" : "feet/ankle_socks/male/",
     "female" : "feet/ankle_socks/female/"
   },

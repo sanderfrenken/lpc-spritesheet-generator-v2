@@ -2,7 +2,7 @@
   "name" : "Thin",
   "type_name" : "eyebrows",
   "layer_1" : {
-    "zPos" : 20,
+    "zPos" : 82,
     "male" : "eyebrows/thin/",
     "female" : "eyebrows/thin/"
   },

@@ -2,7 +2,7 @@
   "name" : "Boots",
   "type_name" : "shoes",
   "layer_1" : {
-    "zPos" : 16,
+    "zPos" : 40,
     "male" : "feet/boots/male/",
     "female" : "feet/boots/female/"
   },

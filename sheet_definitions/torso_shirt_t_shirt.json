@@ -2,7 +2,7 @@
   "name" : "T-shirt",
   "type_name" : "shirt",
   "layer_1" : {
-    "zPos" : 25,
+    "zPos" : 50,
     "male" : "torso/shirt/t_shirt/male/",
     "female" : "torso/shirt/t_shirt/female/"
   },

@@ -2,7 +2,7 @@
   "name" : "Bob Side",
   "type_name" : "hair",
   "layer_1" : {
-    "zPos" : 20,
+    "zPos" : 90,
     "male" : "hair/bob_side/",
     "female" : "hair/bob_side/"
   },

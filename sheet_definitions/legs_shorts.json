@@ -2,7 +2,7 @@
   "name" : "Shorts",
   "type_name" : "pants",
   "layer_1" : {
-    "zPos" : 14,
+    "zPos" : 30,
     "male" : "legs/shorts/male/",
     "female" : "legs/shorts/female/"
   },

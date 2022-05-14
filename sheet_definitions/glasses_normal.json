@@ -2,7 +2,7 @@
   "name" : "Normal",
   "type_name" : "glasses",
   "layer_1" : {
-    "zPos" : 30,
+    "zPos" : 83,
     "male" : "glasses/normal/",
     "female" : "glasses/normal/"
   },

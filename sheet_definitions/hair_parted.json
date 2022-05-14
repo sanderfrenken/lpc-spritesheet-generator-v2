@@ -2,7 +2,7 @@
   "name" : "Parted",
   "type_name" : "hair",
   "layer_1" : {
-    "zPos" : 20,
+    "zPos" : 90,
     "male" : "hair/parted/",
     "female" : "hair/parted/"
   },

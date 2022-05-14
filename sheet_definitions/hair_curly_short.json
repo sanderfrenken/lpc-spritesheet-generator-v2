@@ -2,7 +2,7 @@
   "name" : "Curly Short",
   "type_name" : "hair",
   "layer_1" : {
-    "zPos" : 20,
+    "zPos" : 90,
     "male" : "hair/curly_short/",
     "female" : "hair/curly_short/"
   },

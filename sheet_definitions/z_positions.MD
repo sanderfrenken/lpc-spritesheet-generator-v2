@@ -1,0 +1,14 @@
+- Body: 10
+- Socks: 20
+- Legs: 30
+- Shoes/ Boots: 40
+- Shirts: 50
+- Overshirts: 60
+- Suspenders: 61
+- Head: 80
+- Nose: 81
+- Eyebrows: 82
+- Mustache: 82
+- Beard: 82
+- Glasses: 83
+- Hair: 90

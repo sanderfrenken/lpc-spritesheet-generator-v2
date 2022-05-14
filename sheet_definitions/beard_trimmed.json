@@ -2,7 +2,7 @@
   "name" : "Trimmed",
   "type_name" : "beard",
   "layer_1" : {
-    "zPos" : 20,
+    "zPos" : 82,
     "male" : "beard/trimmed/",
     "female" : "beard/trimmed/"
   },
