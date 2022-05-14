@@ -1,8 +1,9 @@
 - Body: 10
 - Socks: 20
-- Legs: 30
+- Pants/ Hose/ Shorts: 30
 - Shoes/ Boots: 40
 - Shirts: 50
+- Overalls: 51
 - Overshirts: 60
 - Suspenders: 61
 - Head: 80
